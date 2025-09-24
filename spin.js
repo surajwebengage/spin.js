@@ -30,17 +30,7 @@
                         document.querySelector("span#prize").innerText = weDATA[picked].weName, document.querySelector("code > p").innerText = weDATA[picked].weCode, setTimeout(function () {
                             if (document.querySelector(".spinContainer").classList.add("hide"), vis.attr("transform", "rotate(-45)"), "yes" === weDATA[picked].weWin) {
 
-                                     if ("yes" === weDATA[picked].weWin) {
-                                 document.querySelector(".weWinCont").classList.add("show");
-                                   const winAudio = document.getElementById("winSound");
-                                   winAudio.currentTime = 0;
-                                    winAudio.play();
-                                    setTimeout(() => {
-                                       winAudio.pause();
-                                    winAudio.currentTime = 0;
-                                  }, 4000);
-                               }
-                                     
+                               
                                 try {
                                     weNotification.trackEvent("In-app Template - Spin Clicked", JSON.stringify({
                                         Win: weDATA[picked].weWin,
