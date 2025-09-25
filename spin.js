@@ -29,6 +29,10 @@
                     weDATA.length, rotation = 1440 + o * (weDATA.length - Number(i())), picked = (picked = Math.round(weDATA.length - rotation % 360 / o)) >= weDATA.length ? picked % weDATA.length : picked, -1 === oldpick.indexOf(picked) ? (oldpick.push(picked), rotation += 0 - Math.round(o / 2), vis.transition().duration(5e3).attrTween("transform", rotTween).each("end", function () {
                         document.querySelector("span#prize").innerText = weDATA[picked].weName, document.querySelector("code > p").innerText = weDATA[picked].weCode, setTimeout(function () {
                             if (document.querySelector(".spinContainer").classList.add("hide"), vis.attr("transform", "rotate(-45)"), "yes" === weDATA[picked].weWin) {
+                                       if ("yes" === weDATA[picked].weWin) {
+    document.querySelector(".weWinCont").classList.add("show");
+    playWinSound();
+  }
                                 try {
                                     weNotification.trackEvent("In-app Template - Spin Clicked", JSON.stringify({
                                         Win: weDATA[picked].weWin,
